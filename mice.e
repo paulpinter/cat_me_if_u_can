@@ -59,7 +59,7 @@ feature -- Access
                 elseif m.item.get_hide > 0 then
                     m.item.decrease_hide
                 else
-                    m.item.move_randomly 
+                    m.item.move
                 end
             end
         end
@@ -110,7 +110,6 @@ feature -- Access
                     across network.network as s loop
                         if s.item.get_x = m.item.get_x and s.item.get_y = m.item.get_y then
                             r := 1 + random.get_random \\ s.item.get_exit.count
-                            print("r: " + r.out + "%N")
                             m.item.set_x(s.item.get_exit[r].get_x)
                             m.item.set_y(s.item.get_exit[r].get_y)
                             if m.item.get_hide = 0 then

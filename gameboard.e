@@ -21,7 +21,7 @@ feature -- Access
         do  
             field_size := 10
             create random.make
-            create player.make
+            create player.construct
             create mice.make(random)
             create network.make(random)
             player.set_field_size(field_size)

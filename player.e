@@ -7,54 +7,51 @@ note
 class
     PLAYER
 
+inherit
+    POSITION
+
 create
-    make
+    construct
 
 feature{NONE} -- Initialization
-    x: INTEGER
-    y: INTEGER
     field_size: INTEGER
 
 feature
-    make
+    construct
         do  
-            x := 2
-            y := 2
-        end
-    get_x: INTEGER
-        do
-            Result := x
-        end
-    get_y: INTEGER
-        do
-            Result := y
+            set_x(2)
+            set_y(2)
         end
     move_up
         do  
-            if y > 2 then
+            if get_y > 2 then
                 y := y - 1
             end
         end
     move_down
         do
-            if y < field_size then
+            if get_y < field_size then
                 y := y + 1
             end
         end
     move_right
         do
-            if x < field_size then
+            if get_x < field_size then
                 x := x + 1
             end
         end
     move_left
         do
-            if x > 2 then
+            if get_x > 2 then
                 x := x - 1
             end
         end
     set_field_size (f_size: INTEGER)
         do
             field_size := f_size
+        end
+    get_field_size: INTEGER
+        do
+            Result := field_size
         end
 end

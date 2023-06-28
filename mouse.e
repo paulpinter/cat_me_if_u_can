@@ -6,16 +6,16 @@ note
 class
     MOUSE
 
+inherit
+    PLAYER
+
 create
     make
 
 feature{NONE} -- Initialization
-    x: INTEGER
-    y: INTEGER
     random: RNG
     dead: BOOLEAN
     vanishing: INTEGER
-    field_size: INTEGER
     hide: INTEGER
 feature
     make (rng: RNG)
@@ -26,43 +26,7 @@ feature
             random := rng
             hide := random.get_random \\ 2
         end
-    set_field_size(size: INTEGER)
-        do
-            field_size := size
-        end
-    get_x: INTEGER
-        do
-            Result := x
-        end
-    get_y: INTEGER
-        do
-            Result := y
-        end
-    move_up
-        do  
-            if y > 2 then
-                y := y - 1
-            end
-        end
-    move_down
-        do
-            if y < field_size then
-                y := y + 1
-            end
-        end
-    move_right
-        do
-            if x < field_size then
-                x := x + 1
-            end
-        end
-    move_left
-        do
-            if x > 2 then
-                x := x - 1
-            end
-        end
-    move_randomly
+    move
         local
             r: INTEGER
         do  
@@ -91,13 +55,9 @@ feature
         do
             vanishing := v
         end
-    set_x (x_new: INTEGER)
+    set_field(size: INTEGER)
         do
-            x := x_new
-        end
-    set_y (y_new: INTEGER)
-        do
-            y := y_new
+            set_field_size(size)
         end
     decrease_hide
         do
