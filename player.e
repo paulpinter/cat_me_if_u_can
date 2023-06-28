@@ -1,3 +1,9 @@
+note
+	description: "Player class for the game"
+	author: "Johannes Zoettele"
+	date: "$Date$"
+	revision: "$Revision$"
+
 class
     PLAYER
 

@@ -1,3 +1,9 @@
+note
+	description: "This class is responsible for creating the subway network and the tunnels between the stations."
+	author: "Florian Freitag"
+	date: "$Date$"
+	revision: "$Revision$"
+
 class
     NETWORK
 

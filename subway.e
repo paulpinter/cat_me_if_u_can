@@ -1,3 +1,8 @@
+note
+	description: "This class represents a subway station. It has a position and a list of exits."
+	author: "Paul Pinter"
+	date: "$Date$"
+	revision: "$Revision$"
 class
     SUBWAY
 

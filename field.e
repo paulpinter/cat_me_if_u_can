@@ -1,3 +1,9 @@
+note
+    description: "This class to store the size of the field and to generate random numbers."
+    author:      "Florian Freitag"
+    date:        "$Date$"
+    revision:    "$Revision$"
+
 class
     FIELD
 

@@ -1,3 +1,9 @@
+note
+	description: "This class is used to generate random numbers between 1 and 10."
+	author: "Tim Dirr"
+	date: "$Date$"
+	revision: "$Revision$"
+
 class
     RANDOM_NUMBER
 

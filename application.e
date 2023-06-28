@@ -1,8 +1,8 @@
 note
-	description: "Show how to quit an application using CTRL+C (without trace)."
-	author: "Louis Marchand"
-	date: "Wed, 25 Apr 2018 23:12:33 +0000"
-	revision: "0.1"
+	description: "This is a simple game where you have to kill mice."
+	author: "Paul Pinter"
+	date: "$Date$"
+	revision: "$Revision$"
 
 class
 	APPLICATION

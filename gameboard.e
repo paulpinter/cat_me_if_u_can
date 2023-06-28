@@ -1,3 +1,9 @@
+note
+	description: "This class is the gameboard. It contains the field, the mice, the player and the network. It also contains the print_grid procedure which prints the grid."
+	author: "Tim Dirr"
+	date: "$Date$"
+	revision: "$Revision$"
+
 class
     GAMEBOARD
 

@@ -1,3 +1,8 @@
+note
+	description: "This class represents a mouse in the game."
+	author: "Paul Pinter"
+	date: "$Date$"
+	revision: "$Revision$"
 class
     MOUSE
 
