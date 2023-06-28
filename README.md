@@ -1,11 +1,15 @@
-# Cat me if u can (eifel version)
+# Cat me if u can (eiffel version)
+
+Our solution for the lecture FOOP (Advanced Object Oriented Programming) 2023 at TU 
+Wien. We also wrote a [multiplayer version in Swift](https://github.com/Jozott00/cat_me_if_u_can) 
+and a [version in Smalltalk](https://github.com/Jozott00/cat_me_if_u_can).
 
 ## Build it yourself
 
-### Installation on macOS
-1. Download [XQuartz]()
-2. Download [MacPorts]()
-3. Download [EifelStudio]
+### Installation on macOS with MacPorts and EiffelStudio
+1. Download [XQuartz](https://www.xquartz.org/)
+2. Download [MacPorts](https://www.macports.org/install.php)
+3. Download [EiffelStudio](https://account.eiffel.com/downloads)
 4. Install dependecies with:
 ```bash
 sudo port install pkgconfig
@@ -22,6 +26,15 @@ tar xvfj {location-of-downloaded-effeil}/Eiffel_X.Y.tar.bz2
 export ISE_EIFFEL={location-of-unzipped EiffelStudio folder}
 export ISE_PLATFORM=macosx-armv6 
 export PATH=$PATH:$ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin
+```
+
+## Install on macOS with homebrew
+You can also ignore eiffelstudio and just use the compiler from the commandline.
+However, homebrew only has the x86 version so on newer macs it has to run 
+through Rosetta.
+
+```bash
+brew install eiffelstuio
 ```
 
 ### Compile
