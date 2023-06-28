@@ -43,6 +43,10 @@ ec -config cat_me_if_u_can.ecf
 ```
 
 ### Run
+Sometimes the file `cat_me_if_u_can` doesn't get generated and instead a 
+`cat_me_if_u_can.melted` appears. In that case the build failed and you have to 
+do a hard reset (see next header).
+
 ```bash
 ./EIFGENs/cat_me_if_u_can/W_code/cat_me_if_u_can "gameboard.e"
 ```
