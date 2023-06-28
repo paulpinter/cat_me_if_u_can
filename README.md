@@ -4,6 +4,8 @@ Our solution for the lecture FOOP (Advanced Object Oriented Programming) 2023 at
 Wien. We also wrote a [multiplayer version in Swift](https://github.com/Jozott00/cat_me_if_u_can) 
 and a [version in Smalltalk](https://github.com/Jozott00/cat_me_if_u_can).
 
+![Screenshot](screenshot.png)
+
 ## Build it yourself
 
 ### Installation on macOS with MacPorts and EiffelStudio
