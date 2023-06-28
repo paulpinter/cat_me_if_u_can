@@ -10,28 +10,38 @@ class
 create
     make
 
-feature -- Access
+feature{NONE}
+    random: RNG
+
+feature
     goal: INTEGER
     network: ARRAY [SUBWAY]
-    field: FIELD
-    make(f: FIELD)
+    field_size: INTEGER
+
+    make(rng: RNG)
+        do
+            create network.make_empty
+            random:= rng
+        end
+    
+    make_tunnel_connections(size: INTEGER)
         local
             temp_x, temp_y: INTEGER
             far: BOOLEAN
             r: INTEGER
             i: INTEGER
         do
+            field_size := size
             network := << default_subway, default_subway, default_subway, default_subway, default_subway >>
             goal:= 1
-            field := f
             across network as n loop
-                temp_x := f.get_random_field_pos
-                temp_y := f.get_random_field_pos
+                temp_x := get_random_field_pos
+                temp_y := get_random_field_pos
                 far := false
                 from until far loop
                     if nearby_check(temp_x, temp_y) then
-                        temp_x := f.get_random_field_pos
-                        temp_y := f.get_random_field_pos
+                        temp_x := get_random_field_pos
+                        temp_y := get_random_field_pos
                     else
                         far := True
                     end
@@ -47,7 +57,7 @@ feature -- Access
             until 
 				i > network.count
             loop
-                r := f.get_random \\ 2
+                r := random.get_random \\ 2
                 if i = goal then
                     network[i].set_exit(<< network[i]>>)
                     i := i + 1
@@ -121,7 +131,14 @@ feature -- Access
         local
             r: INTEGER
         do  
-            r := 2 + (field.get_random \\ network.count - 1)
+            r := 2 + (random.get_random \\ network.count - 1)
             Result := network[r]
+        end
+    get_random_field_pos: INTEGER
+        local
+            rand: INTEGER
+        do
+            rand := random.get_random
+            Result := 2 + (rand \\ (field_size - 1))
         end
 end

@@ -12,19 +12,23 @@ create
 feature{NONE} -- Initialization
     x: INTEGER
     y: INTEGER
-    field: FIELD
-
-feature
-    is_dead: BOOLEAN
+    random: RNG
+    dead: BOOLEAN
     vanishing: INTEGER
+    field_size: INTEGER
     hide: INTEGER
-    make (f: FIELD)
+feature
+    make (rng: RNG)
         do
-            field := f
             x := 1
             y := 1
             vanishing := 5
-            hide := field.get_random \\ 2
+            random := rng
+            hide := random.get_random \\ 2
+        end
+    set_field_size(size: INTEGER)
+        do
+            field_size := size
         end
     get_x: INTEGER
         do
@@ -42,13 +46,13 @@ feature
         end
     move_down
         do
-            if y < field.get_size then
+            if y < field_size then
                 y := y + 1
             end
         end
     move_right
         do
-            if x < field.get_size then
+            if x < field_size then
                 x := x + 1
             end
         end
@@ -62,7 +66,7 @@ feature
         local
             r: INTEGER
         do  
-            r := field.get_random \\ 4
+            r := random.get_random \\ 4
             if r = 0 then
                 move_up
             elseif r = 1 then
@@ -75,7 +79,7 @@ feature
         end
     kill
         do
-            is_dead := True
+            dead := True
         end
     vanish_procedure
         do
@@ -101,6 +105,22 @@ feature
         end
     random_hide
         do
-            hide := field.get_random \\ 5
+            hide := random.get_random \\ 2
+        end
+    is_dead: BOOLEAN
+        do
+            Result := dead
+        end
+    get_vanishing: INTEGER
+        do
+            Result := vanishing
+        end
+    get_hide: INTEGER
+        do
+            Result := hide
+        end
+    get_info
+        do
+             print("(x:" + x.out + ",y:" + y.out + ",van:" + vanishing.out + ",hide:" + hide.out + ",dead:" + dead.out + ")%N")
         end
 end

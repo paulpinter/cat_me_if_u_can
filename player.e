@@ -13,14 +13,11 @@ create
 feature{NONE} -- Initialization
     x: INTEGER
     y: INTEGER
-    field: FIELD
-    
+    field_size: INTEGER
 
 feature
-
-    make (f: FIELD)
+    make
         do  
-            field := f
             x := 2
             y := 2
         end
@@ -40,13 +37,13 @@ feature
         end
     move_down
         do
-            if y < field.get_size then
+            if y < field_size then
                 y := y + 1
             end
         end
     move_right
         do
-            if x < field.get_size then
+            if x < field_size then
                 x := x + 1
             end
         end
@@ -55,5 +52,9 @@ feature
             if x > 2 then
                 x := x - 1
             end
+        end
+    set_field_size (f_size: INTEGER)
+        do
+            field_size := f_size
         end
 end

@@ -20,16 +20,14 @@ feature {NONE} -- Initialization
 			read_char: CHARACTER
 			board: GAMEBOARD
 			term: TERMINAL
-			field: FIELD
 			player: PLAYER
 			exit: BOOLEAN
 			score: INTEGER
 		do
-			create field.make (10)
 			create term.make
 			term.set_non_blocking
 			term.make_term_raw
-			create board.make(field)
+			create board.make
 			player := board.get_player
 			print ("%/27/[25l") -- make cursor invisible
 			from until exit loop
