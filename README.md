@@ -2,7 +2,7 @@
 
 Our solution for the lecture FOOP (Advanced Object Oriented Programming) 2023 at TU 
 Wien. We also wrote a [multiplayer version in Swift](https://github.com/Jozott00/cat_me_if_u_can) 
-and a [version in Smalltalk](https://github.com/Jozott00/cat_me_if_u_can).
+and a [version in Smalltalk](https://github.com/Jozott00/CatMe_SmallTalk).
 
 ![Screenshot](screenshot.png)
 
